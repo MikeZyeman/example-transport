@@ -185,6 +185,7 @@
     }
   },
   "cli": {
+    "analytics": "5bc2ae6e-b346-45ad-a7b7-ea078d653f7c",
     "defaultCollection": "@nrwl/angular"
   },
   "schematics": {

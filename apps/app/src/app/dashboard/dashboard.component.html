@@ -1,0 +1,55 @@
+<div class="grid-container">
+  <h1 class="mat-h1">Dashboard</h1>
+  <mat-grid-list [cols]='isHandset ? 3: 1' rowHeight="300px">
+    <mat-grid-tile [colspan]="isHandset ? 2: 1" [rowspan]="isHandset ? 2: 1">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>
+            Connection
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+
+        </mat-card-content>
+
+        <mat-card-actions>
+          <button mat-button [routerLink]='["/connections"]' >Search for connection</button>
+        </mat-card-actions>
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>
+            Stationplan
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+
+        </mat-card-content>
+
+        <mat-card-actions>
+          <button mat-button [routerLink]='["/station"]'>Search for station plan</button>
+        </mat-card-actions>
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>
+            Locations
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button [routerLink]='["/connections"]'>Search for location</button>
+        </mat-card-actions>
+      </mat-card>
+    </mat-grid-tile>
+
+  </mat-grid-list>
+</div>

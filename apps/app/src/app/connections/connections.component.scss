@@ -1,0 +1,12 @@
+
+
+.connectionForm {
+  display: grid;
+  grid-template-columns: 45% 45% 10%;
+  grid-gap: 10px;
+}
+
+.resultPanel {
+  max-width: 600px;
+  width: 90%;
+}

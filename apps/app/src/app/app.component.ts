@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Message } from '@example-transport/api-interfaces';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'example-transport-root',
@@ -8,6 +8,13 @@ import { Message } from '@example-transport/api-interfaces';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  hello$ = this.http.get<Message>('/api/hello');
-  constructor(private http: HttpClient) {}
+
+  isHandset = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
+    map(({ matches }) => {
+
+      return matches;
+    })
+  );
+
+  constructor(private breakpointObserver: BreakpointObserver) {}
 }

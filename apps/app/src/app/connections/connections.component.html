@@ -1,0 +1,51 @@
+<div class="container">
+
+  <div>
+    <h1>Connections</h1>
+    <div class="connectionForm">
+
+
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label>Location</mat-label>
+          <input matInput placeholder="Where are you?" [formControl]='start'>
+          <mat-icon matSuffix>person_pin</mat-icon>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label>Destination</mat-label>
+          <input matInput placeholder="Where do you want to go?" [formControl]='end'>
+          <mat-icon matSuffix>pin_drop</mat-icon>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <button mat-fab color="primary" aria-label="Search for connection" [disabled]="start.value == '' || end.value == ''" (click)='connectionSubmit()'>
+          <mat-icon>play_arrow</mat-icon>
+        </button>
+      </div>
+
+    </div>
+
+    <div class="resultPanel" *ngIf='displayResult'>
+
+      <h2><strong>{{displayDeparture}}</strong> to <strong>{{displayArrival}}</strong></h2>
+
+      <mat-accordion>
+
+        <mat-expansion-panel hideToggle *ngFor='let c of connections'>
+          <mat-expansion-panel-header>
+            <mat-panel-title>{{c.from.station.name}}</mat-panel-title>
+            <mat-panel-description>{{c.to.station.name}}</mat-panel-description>
+          </mat-expansion-panel-header>
+        </mat-expansion-panel>
+
+      </mat-accordion>
+
+
+    </div>
+  </div>
+
+</div>

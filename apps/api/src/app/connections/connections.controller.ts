@@ -12,9 +12,10 @@ export class ConnectionsController {
   @Get('')
   async getConnectionFromAndTo(@Query('from') from: string, @Query('to') to: string) {
 
-    console.log(from, to);
-
     const result = await this.conService.getConnections(from, to)
+
+    console.log(result);
+
 
     return result;
 
